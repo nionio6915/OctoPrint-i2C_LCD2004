@@ -35,7 +35,7 @@ class LCD1602Plugin(octoprint.plugin.StartupPlugin,
 
       # nionion edit
       # self.mylcd = CharLCD(i2c_expander='PCF8574', address=0x27, cols=16, rows=2, backlight_enabled=True, charmap='A00')
-      
+      # test change for upload
 	# create block for progress bar
       self.block = bytearray(b'\xFF\xFF\xFF\xFF\xFF\xFF\xFF')
       self.block.append(255)
