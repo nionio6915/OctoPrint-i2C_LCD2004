@@ -6,6 +6,10 @@ This plugin has to evolve:
 - add options in the interface
 - new version for oled displays :)
 
+nionio EDIT: attempt to change to 2004 LCD with I2C backpack
+edits to __init__.py 
+
+raspi appears to need some packages installed as well- i2ctools and possibly python_smbus
 ## Setup
 
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
