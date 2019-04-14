@@ -52,3 +52,7 @@ verify directory at install!
 ## Configuration
 
 Nothing to do for the moment :D
+
+## Removal Uninstall
+Uninstalling plugin "i2CLCD2004 display"
+/home/pi/oprint/bin/python -m pip uninstall --yes octoprint-i2CLCD2004
