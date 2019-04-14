@@ -1,7 +1,7 @@
 # coding=utf-8
 
 """
-  i2C-LCD2004 Plugin for Octoprint
+  i2CLCD2004 Plugin for Octoprint
 """
 
 from __future__ import absolute_import
@@ -17,12 +17,12 @@ from fake_rpi import printf
 import fake_rpi
 
 
-class i2C_LCD2004Plugin(octoprint.plugin.StartupPlugin,
+class i2CLCD2004Plugin(octoprint.plugin.StartupPlugin,
                     octoprint.plugin.EventHandlerPlugin,
                     octoprint.plugin.ProgressPlugin):
 
   def __init__(self):
-    if (os.getenv('i2C-LCD2004_DOCKER')):
+    if (os.getenv('i2CLCD2004_DOCKER')):
       print('We are running in test environnement, no i2c device attached.')
       try:
         print('Loading fake_rpi instead of smbus2')
@@ -154,8 +154,8 @@ class i2C_LCD2004Plugin(octoprint.plugin.StartupPlugin,
 
   def get_update_information(self):
       return dict(
-          i2C-LCD2004Plugin=dict(
-              displayName="i2C-LCD2004 display",
+          i2CLCD2004Plugin=dict(
+              displayName="i2CLCD2004 display",
               displayVersion=self._plugin_version,
 
               type="github_release",
@@ -167,11 +167,11 @@ class i2C_LCD2004Plugin(octoprint.plugin.StartupPlugin,
           )
       )
 
-__plugin_name__ = "i2C-LCD2004 display"
+__plugin_name__ = "i2CLCD2004 display"
 
 def __plugin_load__():
 	global __plugin_implementation__
-	__plugin_implementation__ = i2C-LCD2004()
+	__plugin_implementation__ = i2CLCD2004()
 
 	global __plugin_hooks__
 	__plugin_hooks__ = {
