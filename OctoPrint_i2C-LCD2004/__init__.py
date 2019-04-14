@@ -161,9 +161,9 @@ class i2CLCD2004Plugin(octoprint.plugin.StartupPlugin,
               type="github_release",
               current=self._plugin_version,
               user="nionio6915",
-              repo="OctoPrint-i2C_LCD2004",
+              repo="octoprint_i2CLCD2004",
 
-              pip="https://github.com/nionio6915/octoprint-i2C_LCD2004/archive/{target}.zip"
+              pip="https://github.com/nionio6915/octoprint_i2CLCD2004/archive/{target}.zip"
           )
       )
 

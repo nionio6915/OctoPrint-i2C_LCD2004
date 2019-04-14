@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-  i2C_LCD2004 Plugin for Octoprint installation script.
+  i2CLCD2004 Plugin for Octoprint installation script.
 """
 from setuptools import setup
 
@@ -15,7 +15,7 @@ plugin_package = "octoprint_i2CLCD2004"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal
 # data via __plugin_name__ in the plugin module
-plugin_name = "OctoPrint-i2CLCD2004"
+plugin_name = "octoprint_i2CLCD2004"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal
 # data via __plugin_version__ in the plugin module
