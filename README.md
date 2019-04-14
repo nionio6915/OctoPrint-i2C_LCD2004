@@ -1,6 +1,6 @@
 # OctoPrint-i2C_LCD2004
 
-This plug-in allows you to control a 20x4 LCD display (HD44780 connected via PCF8574 backpack to I2C) to display the octoprint status. 
+This plug-in allows you to control a 20x4 LCD display (HD44780 connected via PCF8574 backpack to I2C) to display the octoprint status.
 
 This plugin is a remix of the originals Lcd1602 by n3bojs4, and Kunsi's PiATX breakout and HD444780 analog plugin. 
 
@@ -16,14 +16,14 @@ This plugin has to evolve:
 - new version for oled displays :)
 
 nionio EDIT: attempt to change to 2004 LCD with I2C backpack, for use with PiATX hat, git.io/PiATX. 
-edits to __init__.py 
+edits to __init__.py
 
 raspi appears to need some packages installed -
 https://github.com/dbrgn/RPLCD ->  
      git clone https://github.com/dbrgn/RPLCD
      cd RPLCD
      sudo python setup.py install
-     
+
 sudo apt install python-smbus
 sudo pip install smbus2
 sudo pip install fake_rpi
@@ -36,16 +36,16 @@ sudo apt-get install ic2tools
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
- original plugin repo at-   https://github.com/nionio6915/octoprint-i2C_LCD2004/archive/master.zip
+ original plugin repo at-   https://github.com/nionio6915/OctoPrint-i2C_LCD2004/archive/master.zip
 
-**MANUAL INSTALL:** 
+**MANUAL INSTALL:**
 
 clone the repo :
 
-`https://github.com/nionio6915/octoprint-i2C_LCD2004`
+`https://github.com/nionio6915/OctoPrint-i2C_LCD2004`
 
 install :
-verify directory at install! 
+verify directory at install!
 
 `cd OctoPrint-LCD2004 && python setup.py install`
 
