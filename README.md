@@ -36,18 +36,18 @@ sudo apt-get install ic2tools
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
- original plugin repo at-   https://github.com/nionio6915/OctoPrint-i2C_LCD2004/archive/master.zip
+ original plugin repo at-   https://github.com/nionio6915/octoprint-i2C_LCD2004/archive/master.zip
 
 **MANUAL INSTALL:**
 
 clone the repo :
 
-`https://github.com/nionio6915/OctoPrint-i2C_LCD2004`
+`https://github.com/nionio6915/octoprint-i2C_LCD2004`
 
 install :
 verify directory at install!
 
-`cd OctoPrint-LCD2004 && python setup.py install`
+`cd octoprint-LCD2004 && python setup.py install`
 
 ## Configuration
 

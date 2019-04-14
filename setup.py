@@ -8,14 +8,14 @@ from setuptools import setup
 ### Do not forget to adjust the following variables to your own plugin.
 
 # The plugin's identifier, has to be unique
-plugin_identifier = "OctoPrint_i2C_LCD2004"
+plugin_identifier = "i2C-LCD2004"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
-plugin_package = "OctoPrint_i2C_LCD2004"
+plugin_package = "octoprint_i2C-LCD2004"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal
 # data via __plugin_name__ in the plugin module
-plugin_name = "OctoPrint-i2C_LCD2004"
+plugin_name = "OctoPrint-i2C-LCD2004"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal
 # data via __plugin_version__ in the plugin module
@@ -34,7 +34,7 @@ plugin_author_email = " 17693150+nionio6915@users.noreply.github.com"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data
 # via __plugin_url__ in the plugin module
-plugin_url = "https://github.com/nionio6915/OctoPrint-i2C_LCD2004"
+plugin_url = "https://github.com/nionio6915/octoprint-i2C_LCD2004"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data
 # via __plugin_license__ in the plugin module

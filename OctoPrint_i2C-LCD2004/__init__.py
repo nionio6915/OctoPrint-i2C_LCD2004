@@ -1,7 +1,7 @@
 # coding=utf-8
 
 """
-  i2C_LCD2004 Plugin for Octoprint
+  i2C-LCD2004 Plugin for Octoprint
 """
 
 from __future__ import absolute_import
@@ -22,7 +22,7 @@ class i2C_LCD2004Plugin(octoprint.plugin.StartupPlugin,
                     octoprint.plugin.ProgressPlugin):
 
   def __init__(self):
-    if (os.getenv('i2C_LCD2004_DOCKER')):
+    if (os.getenv('i2C-LCD2004_DOCKER')):
       print('We are running in test environnement, no i2c device attached.')
       try:
         print('Loading fake_rpi instead of smbus2')
@@ -31,11 +31,18 @@ class i2C_LCD2004Plugin(octoprint.plugin.StartupPlugin,
       except:
         print('Cannot load fake_rpi !')
     else:
-      self.mylcd = CharLCD(i2c_expander='PCF8574', address=0x27, cols=20, rows=4, backlight_enabled=True, charmap='A00')
+      self.mylcd = CharLCD(i2c_expander='PCF8574', address=0x27, cols=20, rows=4, backlight_enabled=True, charmap='A02')
 
       # nionion edit
       # self.mylcd = CharLCD(i2c_expander='PCF8574', address=0x27, cols=16, rows=2, backlight_enabled=True, charmap='A00')
       # test change for upload
+      #
+      #lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
+      #        cols=20, rows=4, dotsize=8,
+      #        charmap='A02',
+      #        auto_linebreaks=True,
+      #        backlight_enabled=True)
+
 	# create block for progress bar
       self.block = bytearray(b'\xFF\xFF\xFF\xFF\xFF\xFF\xFF')
       self.block.append(255)
@@ -147,8 +154,8 @@ class i2C_LCD2004Plugin(octoprint.plugin.StartupPlugin,
 
   def get_update_information(self):
       return dict(
-          i2C_LCD2004Plugin=dict(
-              displayName="i2C_LCD2004 display",
+          i2C-LCD2004Plugin=dict(
+              displayName="i2C-LCD2004 display",
               displayVersion=self._plugin_version,
 
               type="github_release",
@@ -160,11 +167,11 @@ class i2C_LCD2004Plugin(octoprint.plugin.StartupPlugin,
           )
       )
 
-__plugin_name__ = "i2C_LCD2004 display"
+__plugin_name__ = "i2C-LCD2004 display"
 
 def __plugin_load__():
 	global __plugin_implementation__
-	__plugin_implementation__ = i2C_LCD2004Plugin()
+	__plugin_implementation__ = i2C-LCD2004()
 
 	global __plugin_hooks__
 	__plugin_hooks__ = {
