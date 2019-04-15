@@ -19,11 +19,13 @@ nionio EDIT: attempt to change to 2004 LCD with I2C backpack, for use with PiATX
 edits to __init__.py
 
 raspi appears to need some packages installed -
+RPLCD to drive the LCD
 https://github.com/dbrgn/RPLCD ->  
      git clone https://github.com/dbrgn/RPLCD
      cd RPLCD
      sudo python setup.py install
 
+Python smbus or smbus2
 sudo apt install python-smbus
 sudo pip install smbus2
 sudo pip install fake_rpi
@@ -41,6 +43,7 @@ or manually using this URL:
 **MANUAL INSTALL:**
 
 clone the repo :
+Plugin not completed yes or packaged! 
 
 `https://github.com/nionio6915/octoprint-i2C_LCD2004`
 

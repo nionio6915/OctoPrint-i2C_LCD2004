@@ -13,6 +13,7 @@ This plugin has to evolve:
 
 add options in the interface
 new version for oled displays :)
+
 nionio EDIT: attempt to change to 2004 LCD with I2C backpack, for use with PiATX hat, git.io/PiATX. edits to init.py
 
 raspi appears to need some packages installed - https://github.com/dbrgn/RPLCD ->
