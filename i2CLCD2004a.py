@@ -60,6 +60,7 @@ class i2CLCD2004Plugin(octoprint.plugin.StartupPlugin,
   def on_startup(self):
       mylcd = self.mylcd
       self._logger.info("i2C LCD2004 plugin started !")
+      mylcd.write_string('i2CLCD2004 plugin started')
       
   def on_after_startup(self):
       mylcd = self.mylcd
