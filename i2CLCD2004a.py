@@ -66,7 +66,7 @@ class i2CLCD2004Plugin(octoprint.plugin.StartupPlugin,
       mylcd = self.mylcd
       self._logger.info("i2C LCD2004 plugin initialized !")
       mylcd.write_string('Octoprint Starting Up')
-      mylcd.write_string('Hello  World!\r\n')
+      mylcd.write_string('Hello  World!')
       mylcd.write_string('Display i2C LCD2004 Initialized')
 
   def on_print_progress(self,storage,path,progress):
@@ -147,6 +147,48 @@ class i2CLCD2004Plugin(octoprint.plugin.StartupPlugin,
         mylcd.write_string('Printer is Resuming its job') 
         time.sleep(0.2)
 
+  def clear_lower_half(self):
+        lcd.cursor_pos = (1, 0)
+        mylcd.write_string('')
+        lcd.cursor_pos = (2, 0)
+        mylcd.write_string('')
+        lcd.cursor_pos = (3, 0)
+        mylcd.write_string('OctoPrint ' + octoprint.__version__')
+
+  def on_printer_add_temperature(self, data):
+      if not self._ClosedOrError:
+        lcd.cursor_pos = (3, 0)
+        mylcd.write_string('E{:3.0f}/{:3.0f}  B{:3.0f}/{:3.0f}'.format(data['tool0']['actual'], data['tool0']['target'], data['bed']['actual'], data['bed']['target'])
+        self._lcd_update()
+      else:
+        self.clear_lower_half()
+
+  def _lcd_update(self):
+        if self._lcd_updating:
+            return
+
+        self._lcd_updating = True
+
+        lcd.cursor_pos = (0, 0)
+        mylcd.write_string(' ')
+        lcd.cursor_pos = (1, 0)
+        mylcd.write_string(' ')
+        lcd.cursor_pos = (2, 0)
+        mylcd.write_string(' ')
+        lcd.cursor_pos = (3, 0)
+        mylcd.write_string(' ')
+
+        message = line1 + line3
+        self._lcd_send_byte(self._lcd_line1, self._lcd_cmd)
+        for i in range(self.cols*self.rows/2):
+            self._lcd_send_byte(ord(message[i]), self._lcd_chr)
+
+        message = line2 + line4
+        self._lcd_send_byte(self._lcd_line2, self._lcd_cmd)
+        for i in range(self.cols*self.rows/2):
+            self._lcd_send_byte(ord(message[i]), self._lcd_chr)
+
+        self._lcd_updating = False
 
 __plugin_name__ = "i2CLCD2004"
 __plugin_version__ = "0.1.0"
