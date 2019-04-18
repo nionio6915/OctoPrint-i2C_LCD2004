@@ -65,8 +65,15 @@ class i2CLCD2004Plugin(octoprint.plugin.StartupPlugin,
   def on_after_startup(self):
       mylcd = self.mylcd
       self._logger.info("i2C LCD2004 plugin initialized !")
+      self._logger.info("Running RPi.GPIO version %s" % GPIO.VERSION)
+        if GPIO.VERSION < "0.6":
+            self._logger.error("RPi.GPIO version 0.6.0 or greater required.")
+     
+      lcd.cursor_pos = (1, 0)
       mylcd.write_string('Octoprint Starting Up')
+      lcd.cursor_pos = (2, 0)
       mylcd.write_string('Hello  World!')
+      lcd.cursor_pos = (3, 0)
       mylcd.write_string('Display i2C LCD2004 Initialized')
 
   def on_print_progress(self,storage,path,progress):
