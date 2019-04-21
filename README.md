@@ -18,7 +18,19 @@ This plugin has to evolve:
 nionio EDIT: attempt to change to 2004 LCD with I2C backpack, for use with PiATX hat, git.io/PiATX. 
 edits to __init__.py
 
-raspi appears to need some packages installed -
+1. install pip - on system https://pip.pypa.io/en/stable/installing/
+-> or by sudo apt-get install python-pip , accept disk usage
+
+2. install octoprint pre-reqs
+     source ./oprint/bin/activate
+      -> pip install -e [develop,plugins] ** does not work as written
+      pip install develop
+      pip install plugins
+      pip install RPLCD
+      sudo pip install smbus
+     deactivate
+     
+raspi needs some packages installed -
 RPLCD to drive the LCD
 https://github.com/dbrgn/RPLCD ->  
      git clone https://github.com/dbrgn/RPLCD
