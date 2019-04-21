@@ -24,6 +24,11 @@ https://github.com/dbrgn/RPLCD ->
      git clone https://github.com/dbrgn/RPLCD
      cd RPLCD
      sudo python setup.py install
+     git clone https://github.com/dbrgn/RPLCD && cd RPLCD && sudo python setup.py install
+
+source ./oprint/bin/activate
+pip install RPLCD
+deactivate
 
 Python smbus or smbus2
 sudo apt install python-smbus
@@ -31,7 +36,8 @@ sudo pip install smbus2
 sudo pip install fake_rpi
 
 recommended additional package of i2ctools for raspi -
-sudo apt-get install ic2tools
+sudo apt-get install ic2-tools
+git clone git://git.kernel.org/pub/scm/utils/i2c-tools/i2c-tools.git
 
 ## Setup
 
